@@ -53,15 +53,15 @@ a {
   color: #555;
   text-decoration: none; }
 
-.clearfix:before,
-.clearfix:after {
+.cf:before,
+.cf:after {
   content: " ";
   display: inline-block;
   height: 0;
   clear: both;
   visibility: hidden; }
 
-.clearfix {
+.cf {
   *zoom: 1; }
 
 button {
