@@ -9,6 +9,7 @@ var app = {
 var gulp = require('gulp');
 var scss = require('gulp-sass');         // css 预编译
 var cssmin = require('gulp-cssmin');        // 压缩css
+
 var uglify = require('gulp-uglify');        // 压缩js
 var htmlmin = require('gulp-htmlmin');
 var concat = require('gulp-concat');        // 合并文件
@@ -56,8 +57,9 @@ gulp.task('html', function () {
 gulp.task('scss', function () {
     gulp.src(app.srcPath + 'style/*.scss')
         .pipe(scss())
+       // .pipe(cssmin())//压缩
         .pipe(gulp.dest(app.buildPath + 'css/'))
-       .pipe(cssmin())//压缩
+        .pipe(cssmin())//压缩
         .pipe(gulp.dest(app.distPath + 'css/'))
         .pipe(connect.reload())
 });
@@ -68,8 +70,9 @@ gulp.task('js', function () {
         .pipe(babel({
             presets: ['es2015']
         }))
+        .pipe(uglify({ mangle: false }))//压缩
         .pipe(gulp.dest(app.buildPath + 'js/'))
-        .pipe(uglify())//压缩
+        .pipe(uglify({ mangle: false }))//压缩
         .pipe(gulp.dest(app.distPath + 'js/'))
         .pipe(connect.reload())
 });
@@ -132,7 +135,7 @@ gulp.task('mobile-js', function () {
 * 当bulid执行时，会把数组中的所有任务执行了
 * */
 gulp.task('build', ['lib', 'html', 'scss', 'js', 'image', 'media', 'mobile', 'mobile-css', 'mobile-js', 'mobile-image']);
-
+//gulp.task('dist', ['lib', 'html', 'scss', 'js', 'image', 'media', 'mobile', 'mobile-css', 'mobile-js', 'mobile-image']);
 /*定义server服务
 * 搭建一个服务器，设置运行构建目录
 * 目的时刻监听文件里面内容的变化

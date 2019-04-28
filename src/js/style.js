@@ -1,42 +1,40 @@
 // 加载
-var root = "http://localhost:8888/";
-var loader = new resLoader({
-    resources: [
-        root + 'images/fmsy_bg.jpg',
-        root + 'images/find_bg.jpg',
-        root + 'images/yckd_bg.jpg',
-        root + 'images/bnhg_bg.jpg',
-        root + 'images/mtbd_bg.jpg',
-        root + 'images/banner.jpg',
+// var root = "http://localhost:8888/";
+// var loader = new resLoader({
+//     resources: [
+//         root + 'images/fmsy_bg.jpg',
+//         root + 'images/find_bg.jpg',
+//         root + 'images/hdkd_bg.jpg',
+//         root + 'images/bnhg_bg.jpg',
+//         root + 'images/mtbd_bg.jpg',
+//         root + 'images/banner.jpg', 
+//     ],
+//     onStart: function (total) {
+//         // 开始的回调
+//         // console.log('start:' + total);
+//     },
+//     onProgress: function (current, total) {
+//         // 加载中的回调
+//         // console.log(current + '/' + total);
+//         var percent = current / total * 100;
+//         $('.progressbar').css('width', percent + '%');
+//     },
+//     onComplete: function (total) {
+//         // 加载完的回调
+//         // console.log('加载完毕:' + total + '个资源');
+//        // $('.js_start_layer').show();
+//         // if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))) {
+//         //     new WOW().init();
+//         // }
+//         $('#progress').fadeOut(1500, function () {
+//             setTimeout(function () {
+                
+//             }, 2300)
+//         });
 
-       
-    ],
-    onStart: function (total) {
-        // 开始的回调
-        // console.log('start:' + total);
-    },
-    onProgress: function (current, total) {
-        // 加载中的回调
-        // console.log(current + '/' + total);
-        var percent = current / total * 100;
-        $('.progressbar').css('width', percent + '%');
-    },
-    onComplete: function (total) {
-        // 加载完的回调
-        // console.log('加载完毕:' + total + '个资源');
-        $('.js_start_layer').show();
-        // if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))) {
-        //     new WOW().init();
-        // }
-        $('#progress').fadeOut(1500, function () {
-            setTimeout(function () {
-                $('.js_start_layer').addClass('show');
-            }, 2300)
-        });
-
-    }
-});
-loader.start();
+//     }
+// });
+//loader.start();
 $(function () {
 // tab切换
   function tabCtrl(ele) {
@@ -62,6 +60,44 @@ $(function () {
   tabCtrl('.qd');
   tabCtrl('.ysts');
   tabCtrl('.ysw');
+  tabCtrl('.syj');
+//收音机年份
+var deg = 0;
+var num=0;
+$('.syj_right').click(function(){
+    if(deg>360||deg==360){     
+        deg = 0
+    }
+    deg=deg+20;
+    $(this).animate({},function(){
+        $(this).css('transform', 'rotate('+deg+'deg)');
+    });
+    if(num<31){
+        num = $('.syj .tabs .active').index()+1;
+    }else{
+        num=0; 
+    }  
+    $('.syj .tabs .tab').eq(num).addClass('active').siblings().removeClass('active');
+    $('.syj .tabContents .tabContent').hide().eq(num).fadeIn();
+   
+});
+$('.syj_left').click(function(){
+    if(deg>360||deg==360){     
+        deg = 0
+    }
+    deg=deg+20;
+    $(this).animate({},function(){
+        $(this).css('transform', 'rotate('+-deg+'deg)')
+    });
+    if(num>0){
+        num = $('.syj .tabs .active').index()-1;
+    }else{
+        num=31; 
+    }  
+    $('.syj .tabs .tab').eq(num).addClass('active').siblings().removeClass('active');
+    $('.syj .tabContents .tabContent').hide().eq(num).fadeIn();
+
+});
 //返回
 $('.top').click(function(){
     $('html,body').animate( {scrollTop: 0}, 500);
@@ -85,7 +121,8 @@ $('.swiper-button-next1').click(function(){
    }else{
     Index=3; 
    }
-   $('.yckd ul li').eq(Index).slideDown().siblings().slideUp();
+  // $('.yckd ul li').eq(Index).slideDown().siblings().slideUp();
+  $('.yckd ul li').eq(Index).fadeIn().siblings().fadeOut();
 });
 $('.swiper-button-prev1').click(function(){
     if(Index>0){
@@ -93,7 +130,8 @@ $('.swiper-button-prev1').click(function(){
     }else{
      Index=0; 
     }
-    $('.yckd ul li').eq(Index).slideDown().siblings().slideUp();
+    //$('.yckd ul li').eq(Index).slideDown().siblings().slideUp();
+    $('.yckd ul li').eq(Index).fadeIn().siblings().fadeOut();
  });
 //音乐
 let music = document.getElementById('aud');
@@ -235,6 +273,7 @@ $('.swiper-container3 .swiper-slide').click(function(event){
 
 }); 
 $('.close').click(function(){
+  
     $('.fly').fadeOut();
     document.body.style.position = '';
     $("body").css("top",'');
@@ -265,4 +304,24 @@ $(window).scroll(function () {
         console.log($('.fmsy').offset().top);
         console.log(t);
 });
+// new CusScrollBar({
+    //   contentSelector: '.scroll_cont0', //滚动内容区
+    //   barSelector: '.scroll_bar0', //滚动条
+    //   sliderSelector: '.scroll_slider0' //滚动滑块
+    // });
+    new CusScrollBar({
+        contentSelector: '.scroll_cont1', //滚动内容区
+        barSelector: '.scroll_bar1', //滚动条
+        sliderSelector: '.scroll_slider1' //滚动滑块
+      });
+      new CusScrollBar({
+        contentSelector: '.scroll_cont2', //滚动内容区
+        barSelector: '.scroll_bar2', //滚动条
+        sliderSelector: '.scroll_slider2' //滚动滑块
+      });
+      new CusScrollBar({
+        contentSelector: '.scroll_cont3', //滚动内容区
+        barSelector: '.scroll_bar3', //滚动条
+        sliderSelector: '.scroll_slider3' //滚动滑块
+      });
 });

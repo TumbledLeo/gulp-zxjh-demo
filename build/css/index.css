@@ -3,7 +3,8 @@ html, body {
   min-width: 1400px;
   width: 100%;
   max-width: 1920px;
-  font-family: '微软雅黑', Arial, sans-serif; }
+  font-family: '微软雅黑', Arial, sans-serif;
+  overflow-x: hidden; }
 
 .inner {
   width: 1200px;
@@ -70,7 +71,8 @@ a:active {
     .logo ul li {
       padding: 10px 24px; }
       .logo ul li a {
-        color: #fff; }
+        color: #fff;
+        font-size: 16px; }
     .logo ul li.active, .logo ul li:hover {
       background: url(../images/nav_bg.png) no-repeat center bottom; }
       .logo ul li.active a, .logo ul li:hover a {
@@ -84,28 +86,33 @@ a:active {
     .logo .music img {
       border-radius: 30px; }
 
-@media (max-width: 1600px) {
-  .logo ul {
-    width: 770px; } }
-
 .banner {
   width: 100%;
   height: 1202px;
   margin: 0 auto;
   background: url(../images/banner.jpg) no-repeat center bottom; }
-  .banner .inner h1 {
-    padding-top: 326px; }
-  .banner .inner a {
-    display: block; }
+  .banner .inner {
+    position: relative; }
+    .banner .inner h1 {
+      padding-top: 326px; }
+    .banner .inner a {
+      display: block; }
+  .banner .swiper-container5 {
+    position: absolute;
+    right: 0px;
+    top: 363px;
+    width: 397px;
+    height: 532px; }
 
 .fmsy {
   width: 100%;
   height: 3404px;
   background: url(../images/fmsy_bg.jpg) no-repeat center; }
   .fmsy .inner.qd {
-    width: 990px; }
+    width: 990px;
+    height: 874px; }
     .fmsy .inner.qd .des {
-      font-size: 20px;
+      font-size: 18px;
       color: #ffd797;
       text-align: justify;
       line-height: 36px;
@@ -113,7 +120,7 @@ a:active {
     .fmsy .inner.qd .tabs {
       display: flex;
       justify-content: space-between;
-      margin-top: 38px;
+      margin-top: 26px;
       margin-bottom: 15px; }
       .fmsy .inner.qd .tabs a {
         display: block; }
@@ -155,7 +162,8 @@ a:active {
         justify-content: space-between;
         margin: 70px 0 60px; }
   .fmsy .inner.ysts {
-    width: 878px; }
+    width: 878px;
+    height: 410px; }
     .fmsy .inner.ysts p {
       font-size: 16px;
       color: #ffd797;
@@ -163,7 +171,7 @@ a:active {
       line-height: 36px;
       text-indent: 2em; }
     .fmsy .inner.ysts .des {
-      font-size: 20px;
+      font-size: 18px;
       text-indent: 0;
       text-align: center;
       display: block; }
@@ -197,7 +205,8 @@ a:active {
       .fmsy .inner.ysts .tabs li:nth-of-type(5).active a {
         background: url(../images/s55.png) no-repeat center; }
   .fmsy .inner.ysw {
-    width: 890px; }
+    width: 890px;
+    margin: -66px auto 0; }
     .fmsy .inner.ysw .tabs {
       width: 640px;
       margin: 540px auto 50px;
@@ -229,7 +238,7 @@ a:active {
   .find .inner {
     position: relative; }
   .find .des {
-    font-size: 20px;
+    font-size: 18px;
     color: #ffd797;
     text-align: center;
     line-height: 36px; }
@@ -277,7 +286,7 @@ a:active {
     .yckd .swiper-container1 .swiper-slide1 .music {
       position: absolute;
       top: 330px;
-      right: 202px;
+      right: 222px;
       width: 38px;
       height: 38px;
       display: block; }
@@ -303,7 +312,7 @@ a:active {
     height: 250px;
     overflow: hidden;
     position: absolute;
-    top: 568px;
+    top: 594px;
     left: 50%;
     margin-left: -395px;
     z-index: 2; }
@@ -318,7 +327,6 @@ a:active {
       text-align: justify;
       line-height: 36px;
       text-indent: 2em;
-      font-weight: bold;
       padding: 0; }
     .yckd .des .swiper-container2 {
       width: 100%;
@@ -355,7 +363,74 @@ a:active {
 .ysnb {
   width: 100%;
   height: 623px;
-  background: url(../images/ysnb_bg.jpg) no-repeat center; }
+  background: url(../images/ysnb_bg.jpg) no-repeat center;
+  position: relative; }
+  .ysnb .inner {
+    width: 1710px;
+    height: 732px;
+    background: url(../images/syj_bg.png) no-repeat center;
+    position: absolute;
+    left: 50%;
+    margin-left: -860px;
+    bottom: -115px; }
+    .ysnb .inner ol {
+      position: absolute;
+      width: 810px;
+      height: 126px;
+      top: 208px;
+      left: 24%; }
+      .ysnb .inner ol li p {
+        font-size: 18px;
+        color: #ffd797;
+        text-align: justify;
+        line-height: 24px; }
+    .ysnb .inner ul {
+      width: 604px;
+      height: 120px;
+      background: url(../images/syj_three.png) no-repeat;
+      background-position: 100% 130%;
+      position: absolute;
+      top: 396px;
+      left: 50%;
+      margin-left: -302px;
+      display: flex;
+      padding: 0 74px;
+      justify-content: space-between;
+      flex-wrap: wrap; }
+      .ysnb .inner ul li {
+        height: 30px;
+        line-height: 46px;
+        width: 29px;
+        margin: 0 6px; }
+        .ysnb .inner ul li a {
+          color: #847453;
+          font-size: 12px;
+          position: relative;
+          display: inline-block; }
+        .ysnb .inner ul li a:after {
+          content: '';
+          position: absolute;
+          width: 2px;
+          height: 4px;
+          background: #650404;
+          top: 9px;
+          left: 14px; }
+      .ysnb .inner ul li.active a:after {
+        content: '';
+        width: 6px;
+        height: 17px;
+        top: 0;
+        background: url(../images/syj_b.png) no-repeat; }
+    .ysnb .inner .bt {
+      position: absolute;
+      top: 400px;
+      background: url(../images/syj_l.png) no-repeat center;
+      width: 101px;
+      height: 101px; }
+    .ysnb .inner .syj_left {
+      left: 400px; }
+    .ysnb .inner .syj_right {
+      right: 400px; }
 
 .bnhg {
   width: 100%;
@@ -403,13 +478,13 @@ a:active {
       padding-left: 20px;
       margin-bottom: 1px; }
       .mtbd ul li p {
-        font-size: 20px;
+        font-size: 16px;
         text-align: left;
         position: relative;
         color: #7e2325; }
         .mtbd ul li p strong {
           font-weight: normal;
-          left: 300px;
+          left: 190px;
           position: absolute; }
         .mtbd ul li p span {
           right: 20px;
@@ -427,7 +502,7 @@ a:active {
   position: fixed;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.8);
+  background: black;
   z-index: 100;
   display: none; }
   .fly .swiper-slide a {
@@ -448,6 +523,19 @@ a:active {
     background: url(../images/right.png) no-repeat center;
     margin-top: -45px;
     right: 20%; }
+  .fly .close {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 100px;
+    top: 100px;
+    border-radius: 30px;
+    background: #ffd797;
+    text-align: center;
+    line-height: 37px;
+    color: #91342c;
+    z-index: 101;
+    font-size: 20px; }
 
 .footer {
   width: 100%;
@@ -495,3 +583,12 @@ a:active {
 
 .footer .gzh p {
   line-height: 30px; }
+
+.go {
+  display: block;
+  width: 158px;
+  height: 45px;
+  background: url(../images/go.png) no-repeat;
+  position: absolute;
+  top: 374px;
+  right: 222px; }
