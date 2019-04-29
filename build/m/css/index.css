@@ -3,6 +3,21 @@ body {
   margin: 0 auto;
   overflow-x: hidden; }
 
+.music.play {
+  animation: music_run 3s infinite linear; }
+
+@keyframes music_run {
+  0% {
+    -webkit-transform: rotateZ(0);
+    transform: rotateZ(0); }
+  100% {
+    -webkit-transform: rotateZ(360deg);
+    transform: rotateZ(360deg); } }
+
+.main {
+  width: 100%;
+  overflow-x: hidden; }
+
 .head {
   width: 100%;
   height: 50px;
@@ -91,7 +106,8 @@ body {
 
 .fmsy {
   margin-top: -1px;
-  position: relative; }
+  position: relative;
+  width: 100%; }
   .fmsy .inner ul li {
     width: 100%;
     margin-top: 25px; }
@@ -108,7 +124,7 @@ body {
     width: 100%;
     height: 100%;
     z-index: 2;
-    padding: 10%;
+    padding: 4px 10%;
     z-index: 999; }
     .fmsy .inner .more li {
       display: none; }
@@ -116,6 +132,11 @@ body {
         height: 186px;
         overflow: auto;
         position: relative; }
+      .fmsy .inner .more li .pic {
+        width: 80%;
+        margin: 0 auto; }
+        .fmsy .inner .more li .pic img {
+          width: 100%; }
     .fmsy .inner .more .swiper-container5 {
       width: 80%;
       margin-left: 10%; }
@@ -134,7 +155,8 @@ body {
 
 .ysts {
   margin-top: -1px;
-  position: relative; }
+  position: relative;
+  width: 100%; }
   .ysts .bg {
     width: 100%; }
   .ysts .tabs {
@@ -177,7 +199,8 @@ body {
       background-size: 100%; }
 
 .yl {
-  position: relative; }
+  position: relative;
+  width: 100%; }
   .yl .tabs {
     display: flex;
     justify-content: space-between; }
@@ -206,22 +229,26 @@ body {
 
 .find {
   position: relative;
-  margin-top: -1px; }
+  margin-top: -1px;
+  width: 100%; }
+  .find .inner {
+    z-index: 3; }
   .find .tt {
     text-align: center;
     line-height: 30px;
     margin-bottom: 10px; }
   .find .email {
-    width: 174px;
+    width: 150px;
     position: absolute;
     right: 0;
-    bottom: 60px; }
+    bottom: 10%; }
     .find .email img {
       width: 100%; }
 
 .yckd {
   position: relative;
-  margin-top: -1px; }
+  margin-top: -1px;
+  width: 100%; }
   .yckd .inner .father_wrap {
     position: relative; }
   .yckd .inner .top {
@@ -241,9 +268,9 @@ body {
       background: #7e2325;
       color: #fde8c6;
       position: absolute;
-      top: 180px; }
+      top: 30%; }
     .yckd .inner .swiper-slide h5.sed {
-      top: 215px;
+      top: 35%;
       width: 87%; }
     .yckd .inner .swiper-slide .des {
       position: absolute;
@@ -265,14 +292,14 @@ body {
     width: 160px;
     display: block;
     position: absolute;
-    bottom: 10px;
+    top: 72%;
     left: 50%;
     margin-left: -80px; }
     .yckd .inner .go img {
       width: 100%; }
   .yckd .inner .swiper-button-prev, .yckd .inner .swiper-button-next {
     bottom: 0;
-    top: 95%;
+    top: 75%;
     width: 24px;
     height: 45px;
     background-size: 100%; }
@@ -285,7 +312,8 @@ body {
 
 .ysnb {
   position: relative;
-  margin-top: -1px; }
+  margin-top: -1px;
+  width: 100%; }
   .ysnb .inner ol {
     margin-top: 10px;
     height: 500px;
@@ -297,7 +325,13 @@ body {
 
 .bnhg {
   position: relative;
-  margin-top: -1px; }
+  margin-top: -1px;
+  width: 100%; }
+  .bnhg .inner .say {
+    height: 550%;
+    overflow: auto;
+    position: absolute;
+    top: 210%; }
   .bnhg .swiper-container6 {
     position: absolute;
     bottom: 0;
@@ -334,14 +368,14 @@ body {
   .fly .swiper-button-prev4 {
     width: 24px;
     height: 45px;
-    background: url(../images/left.png) no-repeat center;
+    background: url(../images/dp_left.png) no-repeat center;
     background-size: 100%;
     margin-top: -22px;
     left: 20px; }
   .fly .swiper-button-next4 {
     width: 24px;
     height: 45px;
-    background: url(../images/right.png) no-repeat center;
+    background: url(../images/dp_right.png) no-repeat center;
     background-size: 100%;
     margin-top: -22px;
     right: 20px; }
@@ -361,7 +395,8 @@ footer {
   width: 100%;
   height: 83px;
   background: #130500;
-  position: relative; }
+  position: relative;
+  margin-top: -1px; }
   footer img {
     width: 230px;
     position: absolute;
